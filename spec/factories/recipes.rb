@@ -1,27 +1,14 @@
 FactoryGirl.define do
-  factory :cuisine do
-    name "American"
-  end
-  factory :course do
-    name "Main course"
-  end
-  factory :preference do
-    name "Pork"
-  end
-  factory :difficulty do
-    name "Easy"
-  end
-
   factory :recipe do
     name "Ribs on the barbie"
     cuisine
     course
     preference
     difficulty
-    portions 2
+    portion 2
     cooking_time 150
-    ingredients "pork ribs, brown sugar, smoke salt, paprika, garlic powder,
-                 red pepper, barbecue sauce"
+    ingredient "pork ribs, brown sugar, smoke salt, paprika, garlic powder,
+                red pepper, barbecue sauce"
     directions "Preheat oven to 300 degrees f. Peel off tough membrane that
                 covers the bony side of the ribs. Mix together the sugar and
                 spices to make the rub. Apply rub to ribs on all sides. Lay
@@ -35,6 +22,6 @@ FactoryGirl.define do
                 until sauce is cooked on and bubbly. Turn ribs over. Repeat on
                 other side. Alternately, you can grill the ribs on your grill
                 to cook on the sauce."
-    image { File.new("#{Rails.root}/spec/photos/bbq-ribs.jpg") }
+    #image { File.new("#{Rails.root}/spec/photos/bbq-ribs.jpg") }
   end
 end
