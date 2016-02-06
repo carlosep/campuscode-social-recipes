@@ -1,0 +1,3 @@
+module ModelsMacros
+  
+end
