@@ -1,0 +1,21 @@
+<%= form_for @recipe do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :cuisine_id %>
+  <%= f.collection_select :cuisine_id, @cuisines, :id, :name %>
+  <%= f.label :course_id %>
+  <%= f.collection_select :course_id, @courses, :id, :name %>
+  <%= f.label :preference_id %>
+  <%= f.collection_select :preference_id, @preferences, :id, :name %>
+  <%= f.label :difficulty_id %>
+  <%= f.collection_select :difficulty_id, @difficulties, :id, :name %>
+  <%= f.label :portion  %>
+  <%= f.number_field :portion  %>
+  <%= f.label :cooking_time %>
+  <%= f.number_field :cooking_time %>
+  <%= f.label :ingredient %>
+  <%= f.text_area :ingredient %>
+  <%= f.label :directions %>
+  <%= f.text_area :directions %>
+  <%= f.submit submit_text %>
+<% end %>
