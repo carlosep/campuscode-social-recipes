@@ -1,7 +1,11 @@
 class RecipesController < ApplicationController
-  before_action :set_collections, only: [:new]
+  before_action :set_collections, only: [:new, :create]
   before_action :set_recipe, only: [:show]
   respond_to :html, :json
+
+  def index
+  end
+
   def new
     @recipe = Recipe.new
   end

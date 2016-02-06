@@ -34,7 +34,7 @@ feature 'User creates a new recipe' do
     visit new_recipe_path
     click_on "Create Recipe"
     ['Name', 'Cuisine', 'Course', 'Preference', 'Difficulty',
-     'Portions', 'Cooking time', 'Ingredients', 'Directions'].each do |field|
+     'Portion', 'Cooking time', 'Ingredient', 'Directions'].each do |field|
       expect(page).to have_content "#{field} can\'t be blank"
     end
   end
