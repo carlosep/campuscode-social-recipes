@@ -1,4 +1,5 @@
 class CuisinesController < ApplicationController
+  before_filter :authenticate_admin, except: [:show]
   before_action :set_cuisine, only: [:show]
   respond_to :html, :json
   def new

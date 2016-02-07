@@ -4,10 +4,11 @@ feature 'User creates a new recipe' do
   scenario 'successfully' do
     cuisine = build(:cuisine)
 
+    visit root_path
+    admin_sign_in
     visit new_cuisine_path
-    #admin_sign_in
 
-    fill_in 'Name',                with: cuisine.name
+    fill_in 'Name', with: cuisine.name
 
     click_on "Create Cuisine"
 
@@ -15,8 +16,9 @@ feature 'User creates a new recipe' do
   end
 
   scenario 'invalid' do
+    visit root_path
+    admin_sign_in
     visit new_cuisine_path
-    #admin_sign_in
 
     click_on "Create Cuisine"
 
