@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User creates a new recipe' do
+feature 'Admin creates a new cuisine' do
   scenario 'successfully' do
     cuisine = build(:cuisine)
 
