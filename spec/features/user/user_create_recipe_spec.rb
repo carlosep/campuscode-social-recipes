@@ -5,7 +5,7 @@ feature 'User creates a new recipe' do
     recipe = build(:recipe)
 
     visit new_recipe_path
-    #sign_in
+    user_sign_in
 
     fill_in 'Name',                with: recipe.name
     select recipe.cuisine.name,    from: "Cuisine"
@@ -32,6 +32,7 @@ feature 'User creates a new recipe' do
 
   scenario 'invalid' do
     visit new_recipe_path
+    user_sign_in
     click_on "Create Recipe"
     ['Name', 'Cuisine', 'Course', 'Preference', 'Difficulty',
      'Portion', 'Cooking time', 'Ingredient', 'Directions'].each do |field|

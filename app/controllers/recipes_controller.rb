@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
   before_action :set_collections, only: [:new, :create]
   before_action :set_recipe, only: [:show]
   respond_to :html, :json
