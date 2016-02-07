@@ -4,6 +4,7 @@ class RecipesController < ApplicationController
   respond_to :html, :json
 
   def index
+    @recipes = Recipe.all
   end
 
   def new

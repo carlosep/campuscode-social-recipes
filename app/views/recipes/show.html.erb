@@ -1,11 +1,12 @@
-<h2>Recipe: <%= @recipe.name %></h2>
+<h1><%= @recipe.name %></h1>
 <hr>
-<p><strong>Name:</strong> <%= @recipe.name %></p>
-<p><strong>Cuisine:</strong> <%= @recipe.cuisine.name%></p>
-<p><strong>Course:</strong> <%= @recipe.course.name %></p>
 <p><strong>Preference:</strong> <%= @recipe.preference.name %></p>
-<p><strong>Difficulty:</strong> <%= @recipe.difficulty.name %></p>
-<p><strong>Portions:</strong> <%= @recipe.portion %></p>
+<p><strong>Course:</strong> <%= @recipe.course.name %></p>
+<p><strong>Cuisine:</strong> <%= @recipe.cuisine.name%></p>
+<p><strong>Serves:</strong> <%= pluralize(@recipe.portion, 'person') %></p>
 <p><strong>Cooking Time:</strong> <%= @recipe.cooking_time %></p>
-<p><strong>Ingredients:</strong> <%= @recipe.ingredient %></p>
-<p><strong>Directions:</strong> <%= @recipe.directions %></p>
+<p><strong>Difficulty:</strong> <%= @recipe.difficulty.name %></p>
+<h3>Ingredients:</h3>
+<p> <%= @recipe.ingredient %></p>
+<h3>Directions:</h3>
+<p> <%= @recipe.directions %></p>
