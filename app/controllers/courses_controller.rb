@@ -12,6 +12,7 @@ class CoursesController < ApplicationController
   end
 
   def show
+    @recipes = Recipe.all
   end
 
   private

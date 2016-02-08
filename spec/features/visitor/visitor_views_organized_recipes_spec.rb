@@ -23,10 +23,10 @@ feature 'Visitor views organized recipes' do
 
     expect(page).to have_content(preference.name)
     expect(page).to have_content(recipe.name)
-    expect(page).to have_content(recipe.course)
-    expect(page).to have_content(recipe.difficulty)
-    expect(page).to have_content(recipe.preference)
-    expect(page).to have_content(recipe.cuisine)
+    expect(page).to have_content(recipe.course.name)
+    expect(page).to have_content(recipe.difficulty.name)
+    expect(page).to have_content(recipe.preference.name)
+    expect(page).to have_content(recipe.cuisine.name)
   end
   scenario 'And chooses course' do
     course = create(:course, name: 'Main Course')
@@ -37,10 +37,10 @@ feature 'Visitor views organized recipes' do
 
     expect(page).to have_content(course.name)
     expect(page).to have_content(recipe.name)
-    expect(page).to have_content(recipe.course)
-    expect(page).to have_content(recipe.difficulty)
-    expect(page).to have_content(recipe.preference)
-    expect(page).to have_content(recipe.cuisine)
+    expect(page).to have_content(recipe.course.name)
+    expect(page).to have_content(recipe.difficulty.name)
+    expect(page).to have_content(recipe.preference.name)
+    expect(page).to have_content(recipe.cuisine.name)
   end
   scenario 'And chooses cuisine' do
     cuisine = create(:cuisine, name: 'Portuguese')
@@ -51,9 +51,9 @@ feature 'Visitor views organized recipes' do
 
     expect(page).to have_content(cuisine.name)
     expect(page).to have_content(recipe.name)
-    expect(page).to have_content(recipe.course)
-    expect(page).to have_content(recipe.difficulty)
-    expect(page).to have_content(recipe.preference)
-    expect(page).to have_content(recipe.cuisine)
+    expect(page).to have_content(recipe.course.name)
+    expect(page).to have_content(recipe.difficulty.name)
+    expect(page).to have_content(recipe.preference.name)
+    expect(page).to have_content(recipe.cuisine.name)
   end
 end
