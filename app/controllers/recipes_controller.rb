@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   respond_to :html, :json
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.last(20).reverse
   end
 
   def new
