@@ -3,13 +3,15 @@ require 'rails_helper'
 feature 'User destroys a recipe' do
 
   scenario 'successfully' do
-    recipe = create(:recipe)
+    user = create(:user)
+    recipe = create(:recipe, user: user)
 
-    visit recipe_path(recipe)
-    user_sign_in
+    visit root_path
+    user_sign_in(user: user)
+    visit user_path(user)
 
     click_on 'Destroy'
 
-    expect(page).to have_content ('[MESSAGE YET TO BE ADDED]')
+    expect(page).to have_content ("#{recipe.name} was terminated.")
   end
 end

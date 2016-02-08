@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
-  before_action :set_collections, only: [:new, :create]
-  before_action :set_recipe, only: [:show]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_collections, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
   respond_to :html, :json
 
   def index
@@ -21,6 +21,20 @@ class RecipesController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    @recipe = current_user.recipes.update(recipe_params)
+    respond_with @recipe
+  end
+
+  def destroy
+    @recipe.destroy
+    flash[:notice] = "#{@recipe.name} was terminated."
+    redirect_to user_path(current_user)
   end
 
   private
