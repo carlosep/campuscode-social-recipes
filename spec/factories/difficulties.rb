@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :difficulty do
-    name "Easy"
+  factory :difficulty do |d|
+    d.sequence(:name) {|n| "Difficulty name. ##{n}"}
   end
 end

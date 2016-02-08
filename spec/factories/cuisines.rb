@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :cuisine do
-    name "American"
+  factory :cuisine do |c|
+    c.sequence(:name) {|n| "Cuisine name. ##{n}"}
   end
 end

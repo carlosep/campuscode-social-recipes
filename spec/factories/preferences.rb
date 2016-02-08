@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :preference do
-    name "Pork"
+  factory :preference do |d|
+    d.sequence(:name) {|n| "Preference name. ##{n}"}
   end
 end
