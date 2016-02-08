@@ -3,7 +3,11 @@ require 'rails_helper'
 feature 'User visits user area' do
   scenario 'successfully' do
     user = create(:user)
-    visit users_path(user)
+    visit root_path
+    user_sign_in(user: user)
+    visit user_path(user)
+    #puts current_user.inspect
+
     expect(page).to have_content('Your Profile')
     expect(page).to have_content("#{user.first_name}")
     expect(page).to have_content("#{user.last_name}")
@@ -15,7 +19,9 @@ feature 'User visits user area' do
     recipe = create(:recipe, user: user)
     recipe_2 = create(:recipe, user: user)
     recipe_3 = create(:recipe, user: jack)
-    visit users_path(user)
+    visit root_path
+    user_sign_in(user: user)
+    visit user_path(user)
 
     expect(page).to have_content('My Recipes')
     expect(page).to have_content(recipe.name)

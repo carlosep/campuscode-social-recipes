@@ -3,3 +3,8 @@
 <p><%= recipe.course.name %></p>
 <p><%= recipe.cuisine.name %></p>
 <p><%= recipe.difficulty.name %></p>
+<% if current_user == @user %>
+  <%= link_to 'Edit', edit_recipe_path(recipe) %>
+  <%= link_to 'Destroy', recipe_path(recipe), method: :delete,
+      data: {confirm: 'Are you sure?'} %>
+<% end %>

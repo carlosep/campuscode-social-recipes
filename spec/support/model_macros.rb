@@ -1,6 +1,6 @@
 module ModelsMacros
-  def user_sign_in
-    user = User.create(email: "user@socialrecipes.com.br", password: "12345678")
+  def user_sign_in(user: nil)
+    user ||= User.create(email: "user@socialrecipes.com.br", password: "12345678")
     click_on "Sign in"
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password

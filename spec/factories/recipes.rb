@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :recipe do |u|
     u.sequence(:name) {|n| "Name of meal ##{n}"}
+    u.user
     u.cuisine
     u.course
     u.preference
