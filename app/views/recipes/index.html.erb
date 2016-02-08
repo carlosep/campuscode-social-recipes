@@ -18,3 +18,18 @@
     </div>
   <% end %>
 </section>
+<aside>
+  <h4>Preferences: </h4>
+  <% @preferences.each do |preference| %>
+    <%= link_to preference.name, preference %><br>
+  <% end %>
+  <h4>Cuisines: </h4>
+  <% @cuisines.each do |cuisine| %>
+    <%= link_to cuisine.name, cuisine %><br>
+  <% end %>
+</aside>
+  <h4>Courses: </h4>
+  <% @courses.each do |course| %>
+    <%= link_to course.name, course %><br>
+  <% end %>
+</aside>
