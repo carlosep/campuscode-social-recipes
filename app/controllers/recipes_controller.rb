@@ -1,7 +1,8 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_collections, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :authenticate_edit]
+  before_action :authenticate_edit, only: [:edit]
   respond_to :html, :json
 
   def index
@@ -27,8 +28,12 @@ class RecipesController < ApplicationController
   end
 
   def update
-    @recipe = current_user.recipes.update(recipe_params)
-    respond_with @recipe
+    if @recipe.update(recipe_params)
+      redirect_to @recipe
+    else
+      render 'edit'
+    end
+    #respond_with @recipe
   end
 
   def destroy
@@ -47,6 +52,10 @@ class RecipesController < ApplicationController
 
   def set_recipe
     @recipe = Recipe.find(params[:id])
+  end
+
+  def authenticate_edit
+    redirect_to root_path, alert: 'Access Denied' unless current_user == @recipe.user
   end
 
   def recipe_params

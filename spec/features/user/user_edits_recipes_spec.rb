@@ -3,10 +3,13 @@ require 'rails_helper'
 feature 'User edits a recipe' do
 
   scenario 'successfully' do
-    recipe = create(:recipe)
+    user = create(:user)
+    recipe = create(:recipe, user: user)
 
+    visit root_path
+    user_sign_in(user: user)
     visit edit_recipe_path(recipe)
-    user_sign_in
+
 
     fill_in 'Name',                with: 'New Recipe'
     select recipe.cuisine.name,    from: "Cuisine"
@@ -20,11 +23,11 @@ feature 'User edits a recipe' do
 
     click_on 'Edit Recipe'
 
-    expect(page).to have_content recipe.name
-    expect(page).to have_content recipe.portion
-    expect(page).to have_content recipe.cooking_time
-    expect(page).to have_content recipe.ingredient
-    expect(page).to have_content recipe.directions
+    expect(page).to have_content ('New Recipe')
+    expect(page).to have_content (999)
+    expect(page).to have_content (777)
+    expect(page).to have_content ('A lot of different ingrediets')
+    expect(page).to have_content ('mix it up and throw it away.')
   end
 
   scenario 'invalid editing of other users' do
@@ -32,7 +35,7 @@ feature 'User edits a recipe' do
     recipe = create(:recipe, user: other_user)
     visit root_path
     user_sign_in
-    visit users_path(other_user)
+    visit user_path(other_user)
 
     expect(page).not_to have_content 'Edit'
     expect(page).not_to have_content 'Destroy'
