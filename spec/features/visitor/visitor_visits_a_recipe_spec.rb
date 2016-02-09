@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Visitor visits social recipes homepage' do
+feature 'Visitor visits a recipe' do
   scenario 'successfully' do
     recipe = create(:recipe)
 

@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :cuisines
   resources :courses
   resources :preferences
+  resources :favorites
 end
