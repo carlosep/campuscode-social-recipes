@@ -4,8 +4,7 @@ feature 'Admin creates a new cuisine' do
   scenario 'successfully' do
     cuisine = build(:cuisine)
 
-    visit root_path
-    admin_sign_in
+    admin_sign_in(redirect: true)
     visit new_cuisine_path
 
     fill_in 'Name', with: cuisine.name
@@ -16,8 +15,7 @@ feature 'Admin creates a new cuisine' do
   end
 
   scenario 'invalid' do
-    visit root_path
-    admin_sign_in
+    admin_sign_in(redirect: true)
     visit new_cuisine_path
 
     click_on "Create Cuisine"

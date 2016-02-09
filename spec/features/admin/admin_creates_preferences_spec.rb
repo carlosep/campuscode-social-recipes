@@ -4,8 +4,7 @@ feature 'Admin creates a new preference' do
   scenario 'successfully' do
     preference = build(:preference)
 
-    visit root_path
-    admin_sign_in
+    admin_sign_in(redirect: true)
     visit new_preference_path
 
     fill_in 'Name', with: preference.name
@@ -16,8 +15,7 @@ feature 'Admin creates a new preference' do
   end
 
   scenario 'invalid' do
-    visit root_path
-    admin_sign_in
+    admin_sign_in(redirect: true)
     visit new_preference_path
 
     click_on "Create Preference"

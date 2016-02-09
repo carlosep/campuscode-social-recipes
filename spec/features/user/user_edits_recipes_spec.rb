@@ -6,8 +6,7 @@ feature 'User edits a recipe' do
     user = create(:user)
     recipe = create(:recipe, user: user)
 
-    visit root_path
-    user_sign_in(user: user)
+    user_sign_in(user: user, redirect: true)
     visit edit_recipe_path(recipe)
 
 
@@ -33,8 +32,7 @@ feature 'User edits a recipe' do
   scenario 'invalid editing of other users' do
     other_user = create(:user)
     recipe = create(:recipe, user: other_user)
-    visit root_path
-    user_sign_in
+    user_sign_in(redirect: true)
     visit user_path(other_user)
 
     expect(page).not_to have_content 'Edit'

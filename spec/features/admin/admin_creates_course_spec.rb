@@ -4,8 +4,7 @@ feature 'Admin creates a new course' do
   scenario 'successfully' do
     course = build(:course)
 
-    visit root_path
-    admin_sign_in
+    admin_sign_in(redirect: true)
     visit new_course_path
 
     fill_in 'Name', with: course.name
@@ -16,8 +15,7 @@ feature 'Admin creates a new course' do
   end
 
   scenario 'invalid' do
-    visit root_path
-    admin_sign_in
+    admin_sign_in(redirect: true)
     visit new_course_path
 
     click_on "Create Course"

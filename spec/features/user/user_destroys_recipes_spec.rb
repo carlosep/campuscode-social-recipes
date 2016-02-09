@@ -6,8 +6,7 @@ feature 'User destroys a recipe' do
     user = create(:user)
     recipe = create(:recipe, user: user)
 
-    visit root_path
-    user_sign_in(user: user)
+    user_sign_in(user: user, redirect: true)
     visit user_path(user)
 
     click_on 'Destroy'
