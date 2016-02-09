@@ -18,9 +18,16 @@
 <p> <%= @recipe.directions %></p>
 
 <% if current_user %>
-  <%= link_to 'Favorite', {controller: 'favorites',
-                           action: 'create',
-                           favorite: {user_id: current_user.id,
-                                      recipe_id: @recipe.id}},
-                           method: :post %>
+  <% if @favorite != [] %>
+    <%= link_to 'Favorited (click to remove)', {controller: 'favorites',
+                                                action: 'destroy',
+                                                favorite:  @favorite.pluck(:id).first},
+                                                method: :delete %>
+  <% else %>
+    <%= link_to 'Favorite', {controller: 'favorites',
+                             action: 'create',
+                             favorite: {user_id: current_user.id,
+                                        recipe_id: @recipe.id}},
+                             method: :post %>
+  <% end %>
 <% end %>

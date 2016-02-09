@@ -22,6 +22,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @favorite = Favorite.where("user_id = ? AND recipe_id = ?", current_user.id, @recipe.id)
   end
 
   def edit
