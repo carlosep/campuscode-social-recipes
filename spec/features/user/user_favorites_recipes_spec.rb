@@ -12,7 +12,8 @@ feature 'User chooses favorite recipes' do
 
   scenario 'And sees favorite recipes on user area' do
     recipe = create(:recipe)
-    user_sign_in(redirect: true)
+    user = create(:user)
+    user_sign_in(user: user, redirect: true)
     click_on recipe.name
     click_on 'Favorite'
     visit user_path(user)
