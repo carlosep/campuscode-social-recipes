@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.last(20).reverse
+    @all_recipes = Recipe.all
     @courses = Course.all
     @cuisines = Cuisine.all
     @preferences = Preference.all

@@ -6,7 +6,9 @@ feature 'Visitor visits a recipe' do
 
     visit root_path
 
-    click_on recipe.name
+    within ('.recipes') do
+      click_on recipe.name
+    end
 
     expect(page).to have_content(recipe.name)
     # expect(page).to have_content(user.name)

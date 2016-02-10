@@ -4,7 +4,10 @@ feature 'User chooses favorite recipes' do
   scenario 'successfully' do
     recipe = create(:recipe)
     user_sign_in(redirect: true)
-    click_on recipe.name
+    within ('.recipes') do
+      click_on recipe.name
+    end
+
     click_on 'Favorite'
 
     expect(page).to have_content('Favorited')
@@ -14,7 +17,9 @@ feature 'User chooses favorite recipes' do
     recipe = create(:recipe)
     user = create(:user)
     user_sign_in(user: user, redirect: true)
-    click_on recipe.name
+    within ('.recipes') do
+      click_on recipe.name
+    end
     click_on 'Favorite'
     visit user_path(user)
 
