@@ -3,11 +3,23 @@
 <% else %>
 <h1><%= @user.first_name %> Profile</h1>
 <% end %>
-<p><%= @user.first_name %> <%= @user.last_name %></p>
-<p><%= @user.city %> </p>
-<p><%= @user.facebook %></p>
-<p><%= @user.twitter %></p>
-<p> <%= @user.email %></p>
+<p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
+<p>City: <%= @user.city %> </p>
+<p>Facebook: <%= @user.facebook %></p>
+<p>Twitter: <%= @user.twitter %></p>
+<p>Email: <%= @user.email %></p>
+
+<% unless @user.cuisines.blank? %>
+<p>Cuisine Preferences:</p>
+<ul>
+  <%@user.cuisines.split(',').each do |cuisine| %>
+    <%unless cuisine == ' '%>
+      <li><%= Cuisine.find(cuisine).name %></li>
+    <%end %>
+  <% end %>
+</ul>
+<% end %>
+
 
 <h3>My Recipes</h3>
 <div class="recipes" >

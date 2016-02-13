@@ -30,7 +30,7 @@
 
   <div class="field">
     <%= f.label :preferece %><br>
-    <%= collection_check_boxes :cuisine, :cuisine_ids, Cuisine.all, :id, :name %>
+    <%= f.collection_check_boxes :cuisines, Cuisine.all, :id, :name %>
   </div>
 
   <div class="field">
