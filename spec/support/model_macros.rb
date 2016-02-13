@@ -19,4 +19,8 @@ module ModelsMacros
       click_on "Log in"
     end
   end
+  
+  def image_upload_path
+    Rails.root + "spec/fixtures/sample.jpg"
+  end
 end

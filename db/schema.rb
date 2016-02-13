@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160210152130) do
+ActiveRecord::Schema.define(version: 20160213111509) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"
@@ -53,13 +53,17 @@ ActiveRecord::Schema.define(version: 20160210152130) do
     t.integer  "cooking_time"
     t.text     "ingredient"
     t.text     "directions"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "cuisine_id"
     t.integer  "course_id"
     t.integer  "preference_id"
     t.integer  "difficulty_id"
     t.integer  "user_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "recipes", ["course_id"], name: "index_recipes_on_course_id"
@@ -67,6 +71,14 @@ ActiveRecord::Schema.define(version: 20160210152130) do
   add_index "recipes", ["difficulty_id"], name: "index_recipes_on_difficulty_id"
   add_index "recipes", ["preference_id"], name: "index_recipes_on_preference_id"
   add_index "recipes", ["user_id"], name: "index_recipes_on_user_id"
+
+  create_table "send_mails", force: :cascade do |t|
+    t.string   "sender"
+    t.string   "receiver"
+    t.string   "chosen_recipe"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false

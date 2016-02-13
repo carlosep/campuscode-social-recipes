@@ -16,6 +16,7 @@ feature 'User creates a new recipe' do
     fill_in 'Cooking time',        with: recipe.cooking_time
     fill_in 'Ingredient',          with: recipe.ingredient
     fill_in 'Directions',          with: recipe.directions
+    attach_file("Image", image_upload_path)
 
     click_on "Create Recipe"
 
@@ -28,6 +29,7 @@ feature 'User creates a new recipe' do
     expect(page).to have_content recipe.cooking_time
     expect(page).to have_content recipe.ingredient
     expect(page).to have_content recipe.directions
+    expect(page).to have_css("img[src*='sample.jpg']")
   end
 
   scenario 'invalid' do

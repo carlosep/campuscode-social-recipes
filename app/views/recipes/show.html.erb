@@ -1,4 +1,6 @@
 <h1><%= @recipe.name %></h1>
+
+<%= image_tag @recipe.image.url(:medium)%>
 <h3><em>Author: <%= @recipe.user.first_name %></em></h3>
 <% if current_user == @recipe.user %>
   <%= link_to 'Edit', edit_recipe_path(@recipe) %>
