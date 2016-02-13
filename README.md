@@ -44,8 +44,9 @@ Link para o Heroku: https://carlosep-social-recipes.herokuapp.com/
   * sem branch...
   * concluído
 * Usuário mantem seus dados de perfil
-  * branch user_keeps_profile_data
-  * concluído, sem preferências de cozinha
+  * branch user_keeps_profile_data, sem preferências de cozinha
+  * branch user_keeps_profile_data_v2,  preferências de cozinha adicionados aqui
+  * concluído
 * Usuário envia receita para amigo
   * branch user_sends_email
   * FAIL!
