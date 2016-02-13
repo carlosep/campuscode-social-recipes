@@ -8,7 +8,8 @@ Link para o Heroku: https://carlosep-social-recipes.herokuapp.com/
 
 * Usuário cadastra receitas
   * branch user_creates_recipe
-  * concluído - sem upload de imagens.
+  * branch image_updload - branch com upload de imagens.
+  * concluído
 * Usuário visualiza receitas
   * branch user_views_recipes
   * concluído
