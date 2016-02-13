@@ -29,6 +29,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :preferece %><br>
+    <%= collection_check_boxes :cuisine, :cuisine_ids, Cuisine.all, :id, :name %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email %>
   </div>
