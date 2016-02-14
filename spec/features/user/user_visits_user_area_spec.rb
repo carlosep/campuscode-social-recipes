@@ -7,8 +7,15 @@ feature 'User visits user area' do
     visit user_path(user)
 
     expect(page).to have_content('Your Profile')
-    expect(page).to have_content("#{user.first_name}")
-    expect(page).to have_content("#{user.last_name}")
+    expect(page).to have_content(user.first_name)
+    expect(page).to have_content(user.last_name)
+    expect(page).to have_content(user.city)
+    expect(page).to have_content(user.facebook)
+    expect(page).to have_content(user.email)
+    expect(page).to have_content(user.twitter)
+    user.cuisines.split(',').each do |cuisine|
+      expect(page).to have_content(cuisine)
+    end
   end
 
   scenario 'and sees only their own recipes' do

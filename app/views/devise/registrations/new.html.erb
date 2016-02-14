@@ -29,7 +29,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :preferece %><br>
+    <%= f.label :cuisines, "Cuisine Preferences" %><br>
     <%= f.collection_check_boxes :cuisines, Cuisine.all, :name, :name %>
   </div>
 

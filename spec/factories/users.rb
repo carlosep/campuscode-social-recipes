@@ -5,6 +5,7 @@ FactoryGirl.define do
     u.city 'Sparta'
     u.facebook 'facebook.com/kingleonidas'
     u.twitter '@kingleonidas'
+    u.cuisines 'Greek, Brazilian'
     u.sequence(:email) {|n| "leonidas#{n}@sparta.gr"}
     u.password 'thisissparta'
     u.admin false
@@ -15,6 +16,7 @@ FactoryGirl.define do
     city 'Gotham'
     facebook 'facebook.com/notbatman'
     twitter '@notbatman'
+    cuisines 'American, Italian'
     email 'batman@socialrecipes.com'
     password 'ImTheAdminBitch'
     admin true
