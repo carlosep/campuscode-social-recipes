@@ -9,6 +9,8 @@
 <p>Twitter: <%= @user.twitter %></p>
 <p>Email: <%= @user.email %></p>
 
+<%= link_to "Edit Profile Information", edit_user_registration_path if @user == current_user %>
+
 <% unless @user.cuisines.blank? %>
 <p>Cuisine Preferences:</p>
 <ul>

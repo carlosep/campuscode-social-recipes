@@ -29,7 +29,7 @@ feature 'User edits a recipe' do
     expect(page).to have_content ('mix it up and throw it away.')
   end
 
-  scenario 'invalid editing of other users' do
+  scenario 'invalid editing of other users recipes' do
     other_user = create(:user)
     recipe = create(:recipe, user: other_user)
     user_sign_in(redirect: true)

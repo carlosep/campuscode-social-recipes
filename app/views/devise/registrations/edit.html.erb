@@ -4,6 +4,36 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :facebook %><br />
+    <%= f.text_field :facebook %>
+  </div>
+
+  <div class="field">
+    <%= f.label :twitter %><br />
+    <%= f.text_field :twitter %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cuisines, "Cuisine Preferences" %><br>
+    <%= f.collection_check_boxes :cuisines, Cuisine.all, :name, :name %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
