@@ -2,7 +2,7 @@ class RegistrationsController < Devise::RegistrationsController
   before_action :set_collections, only: [:create]
   private
   def set_collections
-    params[:user][:cuisines] = params[:user][:cuisines].join(', ')
+    params[:user][:cuisines] = params[:user][:cuisines].join(', ').chomp(', ')
   end
 
   def sign_up_params
