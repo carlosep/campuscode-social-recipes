@@ -8,17 +8,17 @@ feature 'User creates a new recipe' do
     user_sign_in
 
     fill_in 'Name',                with: recipe.name
-    select recipe.cuisine.name,    from: "Cuisine"
-    select recipe.course.name,     from: "Course"
-    select recipe.preference.name, from: "Preference"
-    select recipe.difficulty.name, from: "Difficulty"
+    select recipe.cuisine.name,    from: 'Cuisine'
+    select recipe.course.name,     from: 'Course'
+    select recipe.preference.name, from: 'Preference'
+    select recipe.difficulty.name, from: 'Difficulty'
     fill_in 'Portion',             with: recipe.portion
     fill_in 'Cooking time',        with: recipe.cooking_time
     fill_in 'Ingredient',          with: recipe.ingredient
     fill_in 'Directions',          with: recipe.directions
-    attach_file("Image", image_upload_path)
+    attach_file('Image', image_upload_path)
 
-    click_on "Create Recipe"
+    click_on 'Create Recipe'
 
     expect(page).to have_content recipe.name
     expect(page).to have_content recipe.cuisine.name
@@ -35,7 +35,7 @@ feature 'User creates a new recipe' do
   scenario 'invalid' do
     visit new_recipe_path
     user_sign_in
-    click_on "Create Recipe"
+    click_on 'Create Recipe'
     ['Name', 'Cuisine', 'Course', 'Preference', 'Difficulty',
      'Portion', 'Cooking time', 'Ingredient', 'Directions'].each do |field|
       expect(page).to have_content "#{field} can\'t be blank"

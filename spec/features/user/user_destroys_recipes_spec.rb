@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'User destroys a recipe' do
-
   scenario 'successfully' do
     user = create(:user)
     recipe = create(:recipe, user: user)
@@ -11,6 +10,6 @@ feature 'User destroys a recipe' do
 
     click_on 'Destroy'
 
-    expect(page).to have_content ("#{recipe.name} was terminated.")
+    expect(page).to have_content "#{recipe.name} was terminated."
   end
 end

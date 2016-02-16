@@ -1,5 +1,5 @@
 class PreferencesController < ApplicationController
-  before_filter :authenticate_admin, except: [:show]
+  before_action :authenticate_admin, except: [:show]
   before_action :set_preference, only: [:show]
   respond_to :html, :json
   def new
@@ -15,6 +15,7 @@ class PreferencesController < ApplicationController
   end
 
   private
+
   def set_preference
     @preference = Preference.find(params[:id])
   end

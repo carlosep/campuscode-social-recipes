@@ -7,7 +7,7 @@ feature 'Visitor visits social recipes homepage' do
   end
   scenario 'and sees recipes on index' do
     recipe = create(:recipe)
-    recipe_2 = create(:recipe, name: "Fried banana")
+    recipe_2 = create(:recipe, name: 'Fried banana')
     visit root_path
     expect(page).to have_content(recipe.name)
     expect(page).to have_content(recipe.cuisine.name)
@@ -19,16 +19,14 @@ feature 'Visitor visits social recipes homepage' do
 
   scenario 'and sees last 20 recipes on index' do
     FactoryGirl.reload unless FactoryGirl.factories.blank?
-    for i in 1..25
-      recipe = create(:recipe)
-    end
+    25.times { create(:recipe) }
 
     visit root_path
-    for i in 6..25
-      expect(page).to have_content("Name of meal ##{i} P") #Gambiarra??
+    (6..25).each do |i|
+      expect(page).to have_content("Name of meal ##{i} P") # Gambiarra??
     end
-    for i in 1..5
-      expect(page).not_to have_content("Name of meal ##{i} P") #Gambiarra??
+    (1..5).each do |i|
+      expect(page).not_to have_content("Name of meal ##{i} P") # Gambiarra??
     end
   end
 end

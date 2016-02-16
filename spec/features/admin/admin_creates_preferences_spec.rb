@@ -9,7 +9,7 @@ feature 'Admin creates a new preference' do
 
     fill_in 'Name', with: preference.name
 
-    click_on "Create Preference"
+    click_on 'Create Preference'
 
     expect(page).to have_content preference.name
   end
@@ -18,7 +18,7 @@ feature 'Admin creates a new preference' do
     admin_sign_in(redirect: true)
     visit new_preference_path
 
-    click_on "Create Preference"
+    click_on 'Create Preference'
 
     expect(page).to have_content "Name can\'t be blank"
   end

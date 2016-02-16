@@ -9,7 +9,7 @@ feature 'Admin creates a new cuisine' do
 
     fill_in 'Name', with: cuisine.name
 
-    click_on "Create Cuisine"
+    click_on 'Create Cuisine'
 
     expect(page).to have_content cuisine.name
   end
@@ -18,7 +18,7 @@ feature 'Admin creates a new cuisine' do
     admin_sign_in(redirect: true)
     visit new_cuisine_path
 
-    click_on "Create Cuisine"
+    click_on 'Create Cuisine'
 
     expect(page).to have_content "Name can\'t be blank"
   end

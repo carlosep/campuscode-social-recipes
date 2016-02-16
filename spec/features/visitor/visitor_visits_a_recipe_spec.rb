@@ -6,7 +6,7 @@ feature 'Visitor visits a recipe' do
 
     visit root_path
 
-    within ('.recipes') do
+    within '.recipes' do
       click_on recipe.name
     end
 

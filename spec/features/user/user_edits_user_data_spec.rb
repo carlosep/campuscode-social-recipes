@@ -1,10 +1,9 @@
 require 'rails_helper'
 
 feature 'User edits a recipe' do
-
   scenario 'successfully' do
     user = create(:user)
-    recipe = create(:recipe)
+    create(:recipe)
     cuisine_1 = create(:cuisine)
     cuisine_2 = create(:cuisine)
     cuisine_3 = create(:cuisine)
@@ -28,17 +27,17 @@ feature 'User edits a recipe' do
 
     click_on 'Update'
 
-    expect(page).to have_content ('Your account has been updated successfully.')
+    expect(page).to have_content 'Your account has been updated successfully.'
     visit user_path(user)
-    expect(page).to have_content ('Another Name')
-    expect(page).to have_content ('Another Last Name')
-    expect(page).to have_content ('Ordinaryland')
-    expect(page).to have_content ('facebook.com/otherstuff')
-    expect(page).to have_content ('twitter.com/@otherstuff')
-    expect(page).to have_content ('itsamemario@nintendo.com')
-    expect(page).to have_content (cuisine_1.name)
-    expect(page).to have_content (cuisine_2.name)
-    expect(page).to have_content (cuisine_4.name)
-    expect(page).not_to have_content (cuisine_3.name)
+    expect(page).to have_content 'Another Name'
+    expect(page).to have_content 'Another Last Name'
+    expect(page).to have_content 'Ordinaryland'
+    expect(page).to have_content 'facebook.com/otherstuff'
+    expect(page).to have_content 'twitter.com/@otherstuff'
+    expect(page).to have_content 'itsamemario@nintendo.com'
+    expect(page).to have_content cuisine_1.name
+    expect(page).to have_content cuisine_2.name
+    expect(page).to have_content cuisine_4.name
+    expect(page).not_to have_content cuisine_3.name
   end
 end

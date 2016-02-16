@@ -40,8 +40,8 @@ feature 'User visits user area' do
     expect(page).to have_content(recipe_2.difficulty.name)
 
     within('.recipes') do
-      expect(page).to have_content("Edit")
-      expect(page).to have_content("Destroy")
+      expect(page).to have_content('Edit')
+      expect(page).to have_content('Destroy')
     end
 
     expect(page).not_to have_content(recipe_3.name)

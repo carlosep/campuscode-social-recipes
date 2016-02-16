@@ -6,7 +6,7 @@ FactoryGirl.define do
     u.facebook 'facebook.com/kingleonidas'
     u.twitter '@kingleonidas'
     u.cuisines 'Greek, Brazilian'
-    u.sequence(:email) {|n| "leonidas#{n}@sparta.gr"}
+    u.sequence(:email) { |n| "leonidas#{n}@sparta.gr" }
     u.password 'thisissparta'
     u.admin false
   end

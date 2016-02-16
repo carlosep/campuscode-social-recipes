@@ -9,7 +9,7 @@ feature 'Admin creates a new course' do
 
     fill_in 'Name', with: course.name
 
-    click_on "Create Course"
+    click_on 'Create Course'
 
     expect(page).to have_content course.name
   end
@@ -18,7 +18,7 @@ feature 'Admin creates a new course' do
     admin_sign_in(redirect: true)
     visit new_course_path
 
-    click_on "Create Course"
+    click_on 'Create Course'
 
     expect(page).to have_content "Name can\'t be blank"
   end

@@ -37,6 +37,7 @@ gem "paperclip", "~> 4.3"
 
 gem "devise"
 
+
 # gems required by Heroku
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
@@ -52,7 +53,7 @@ group :development, :test do
   gem 'simplecov', require: false
   gem 'capybara'
 
-  gem 'rubocop', require: false
+  gem 'rubocop', '~> 0.37.2', require: false
 end
 
 group :development do

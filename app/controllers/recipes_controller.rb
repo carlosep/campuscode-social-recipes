@@ -1,7 +1,10 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_collections, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :authenticate_edit]
+  before_action :authenticate_user!, only: [:new, :create, :edit,
+                                            :update, :destroy]
+  before_action :set_collections, only: [:new, :create, :edit,
+                                         :update, :destroy]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy,
+                                    :authenticate_edit]
   before_action :authenticate_edit, only: [:edit]
   respond_to :html, :json
 
@@ -24,7 +27,8 @@ class RecipesController < ApplicationController
 
   def show
     if current_user
-      @favorite = Favorite.where("user_id = ? AND recipe_id = ?", current_user.id, @recipe.id)
+      @favorite = Favorite.where('user_id = ? AND recipe_id = ?',
+                                 current_user.id, @recipe.id)
     end
   end
 
@@ -37,7 +41,7 @@ class RecipesController < ApplicationController
     else
       render 'edit'
     end
-    #respond_with @recipe
+    # respond_with @recipe
   end
 
   def destroy
@@ -47,6 +51,7 @@ class RecipesController < ApplicationController
   end
 
   private
+
   def set_collections
     @cuisines = Cuisine.all
     @courses = Course.all
@@ -59,12 +64,15 @@ class RecipesController < ApplicationController
   end
 
   def authenticate_edit
-    redirect_to root_path, alert: 'Access Denied' unless current_user == @recipe.user
+    unless current_user == @recipe.user
+      redirect_to root_path, alert: 'Access Denied'
+    end
   end
 
   def recipe_params
     params.require(:recipe).permit(:name, :cuisine_id, :course_id,
                                    :preference_id, :difficulty_id, :portion,
-                                   :cooking_time, :ingredient, :directions, :image)
+                                   :cooking_time, :ingredient, :directions,
+                                   :image)
   end
 end

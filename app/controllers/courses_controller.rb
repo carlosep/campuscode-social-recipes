@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_filter :authenticate_admin, except: [:show]
+  before_action :authenticate_admin, except: [:show]
   before_action :set_course, only: [:show]
   respond_to :html, :json
   def new
@@ -16,6 +16,7 @@ class CoursesController < ApplicationController
   end
 
   private
+
   def set_course
     @course = Course.find(params[:id])
   end

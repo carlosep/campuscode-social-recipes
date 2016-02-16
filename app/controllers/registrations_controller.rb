@@ -1,6 +1,8 @@
 class RegistrationsController < Devise::RegistrationsController
   before_action :set_collections, only: [:create, :update]
+
   private
+
   def set_collections
     params[:user][:cuisines] = params[:user][:cuisines].join(', ').chomp(', ')
   end
