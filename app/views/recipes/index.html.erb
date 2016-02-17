@@ -26,18 +26,18 @@
 </section>
 
 <aside>
-  <h4><%= t '.preferences'%></h4>
+  <h4><%= t '.preferences'%>:</h4>
   <% @preferences.each do |preference| %>
     <%= link_to preference.name, preference %><br>
   <% end %>
-  <h4>Cuisines: </h4>
+  <h4><%= t '.cuisines'%>:</h4>
   <% @cuisines.each do |cuisine| %>
     <%= link_to cuisine.name, cuisine %><br>
   <% end %>
 </aside>
 
 <aside>
-  <h4><%= t '.courses'%></h4>
+  <h4><%= t '.courses'%>:</h4>
   <% @courses.each do |course| %>
     <%= link_to course.name, course %><br>
   <% end %>

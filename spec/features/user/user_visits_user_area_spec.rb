@@ -4,7 +4,7 @@ feature 'User visits user area' do
   scenario 'successfully' do
     user = create(:user)
     user_sign_in(user: user, redirect: true)
-    visit user_path(user)
+    visit user_path(id: user)
 
     expect(page).to have_content('Your Profile')
     expect(page).to have_content(user.first_name)
@@ -25,7 +25,7 @@ feature 'User visits user area' do
     recipe_2 = create(:recipe, user: user)
     recipe_3 = create(:recipe, user: jack)
     user_sign_in(user: user, redirect: true)
-    visit user_path(user)
+    visit user_path(id: user)
 
     expect(page).to have_content('My Recipes')
     expect(page).to have_content(recipe.name)

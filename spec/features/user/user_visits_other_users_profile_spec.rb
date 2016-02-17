@@ -6,7 +6,7 @@ feature 'User visits other users profile' do
     other_user = create(:user)
     recipe = create(:recipe, user: other_user)
     user_sign_in(user: user, redirect: true)
-    visit user_path(other_user)
+    visit user_path(id: other_user)
 
     expect(page).to have_content("#{other_user.first_name} Profile")
     expect(page).to have_content(other_user.first_name)

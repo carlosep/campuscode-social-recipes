@@ -28,7 +28,7 @@ feature 'User edits a recipe' do
     click_on 'Update'
 
     expect(page).to have_content 'Your account has been updated successfully.'
-    visit user_path(user)
+    visit user_path(id: user)
     expect(page).to have_content 'Another Name'
     expect(page).to have_content 'Another Last Name'
     expect(page).to have_content 'Ordinaryland'

@@ -6,7 +6,7 @@ feature 'User edits a recipe' do
     recipe = create(:recipe, user: user)
 
     user_sign_in(user: user, redirect: true)
-    visit edit_recipe_path(recipe)
+    visit edit_recipe_path(id: recipe)
 
     fill_in 'Name',                with: 'New Recipe'
     select recipe.cuisine.name,    from: 'Cuisine'
@@ -31,7 +31,7 @@ feature 'User edits a recipe' do
     other_user = create(:user)
     create(:recipe, user: other_user)
     user_sign_in(redirect: true)
-    visit user_path(other_user)
+    visit user_path(id: other_user)
 
     expect(page).not_to have_content 'Edit'
     expect(page).not_to have_content 'Destroy'

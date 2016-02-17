@@ -26,7 +26,7 @@ feature 'User is redirected' do
     other_user = create(:user)
     recipe = create(:recipe, user: other_user)
     user_sign_in(redirect: true)
-    visit edit_recipe_path(recipe)
+    visit edit_recipe_path(id: recipe)
 
     expect(page).to have_content 'Access Denied'
   end

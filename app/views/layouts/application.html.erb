@@ -6,14 +6,17 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<%= link_to "Home", root_path %>
+<% home = t '.home'; my_profile = t '.my_profile'; new_recipe = t '.new_recipe'%>
+<% sign_out = t '.sign_out'; sign_in = t '.sign_in'; sign_up = t '.sign_up'%>
+
+<%= link_to home, root_path %>
   <% if user_signed_in? %>
-    <%= link_to "My profile", user_path(current_user) %>
-    <%= link_to "New Recipe", new_recipe_path %>
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <%= link_to my_profile, user_path(current_user) %>
+    <%= link_to new_recipe, new_recipe_path %>
+    <%= link_to sign_out, destroy_user_session_path, method: :delete %>
   <% else %>
-    <%= link_to "Sign in", new_user_session_path %>
-    <%= link_to "Sign up", new_user_registration_path %>
+    <%= link_to sign_in, new_user_session_path %>
+    <%= link_to sign_up, new_user_registration_path %>
   <% end %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

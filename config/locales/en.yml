@@ -1,20 +1,13 @@
 en:
   courses:
     new:
-    create:
-    show:
+      title: 'New Course'
   cuisines:
     new:
-    create:
-    show:
-  favorites:
-    new:
-    create:
-    destroy:
+      title: 'New Cuisine'
   preferences:
     new:
-    create:
-    show:
+      title: 'New Preference'
   recipes:
     index:
       title: 'Welcome to Social Recipes'
@@ -44,7 +37,32 @@ en:
       title: 'New Recipe'
     edit:
       title: 'Edit Recipe'
-  registrations:
+  devise:
+    registrations:
+      new:
+        title: 'Sign up'
+      edit:
+        title: 'Edit %{resource}'
+    sessions:
+      new:
+        title: 'Log in'
+  layouts:
+    application:
+      home: 'Home'
+      my_profile: 'My profile'
+      new_recipe: 'New Recipe'
+      sign_out: 'Sign out'
+      sign_in: 'Sign in'
+      sign_up: 'Sign up'
   users:
-    index:
     show:
+      title: '%{user} Profile'
+      user_title: 'Your Profile'
+      name: 'Name'
+      city: 'City'
+      facebook: 'Facebook'
+      twitter: 'Twitter'
+      email: 'Email'
+      preferences: 'Cuisine Preferences'
+      recipes: 'My Recipes'
+      favorites: 'Favorite Recipes'

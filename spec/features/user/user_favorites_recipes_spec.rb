@@ -21,7 +21,7 @@ feature 'User chooses favorite recipes' do
       click_on recipe.name
     end
     click_on 'Favorite'
-    visit user_path(user)
+    visit user_path(id: user)
 
     expect(page).to have_content 'Favorited Recipes:'
     expect(page).to have_content recipe.name
