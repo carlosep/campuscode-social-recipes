@@ -1,8 +1,10 @@
 <% if current_user.try(:admin?) %>
   <h1><%=t '.admin_title', admin: current_user.first_name %></h1>
-  <%= link_to "New Cuisine", new_cuisine_path %>
-  <%= link_to "New Preference", new_preference_path %>
-  <%= link_to "New Course", new_course_path %>
+  <% new_cuisine = t '.new_cuisine'; new_preference = t '.new_preference' %>
+  <% new_course = t '.new_course'; %>
+  <%= link_to new_cuisine, new_cuisine_path %>
+  <%= link_to new_preference, new_preference_path %>
+  <%= link_to new_course, new_course_path %>
 <% elsif current_user %>
   <h1><%=t '.user_title', user: current_user.first_name %></h1>
 <% else %>
@@ -16,10 +18,10 @@
     <div class="recipes">
       <h3><%= link_to recipe.name, recipe %></h3>
       <%= image_tag recipe.image.url(:thumb)%>
-      <p>Preference: <%= recipe.preference.name %></p>
-      <p>Course: <%= recipe.course.name %></p>
-      <p>Cuisine: <%= recipe.cuisine.name %></p>
-      <p>Difficulty: <%= recipe.difficulty.name %></p>
+      <p><%= t '.preference'%>: <%= recipe.preference.name %></p>
+      <p><%= t '.course'%>: <%= recipe.course.name %></p>
+      <p><%= t '.cuisine'%>: <%= recipe.cuisine.name %></p>
+      <p><%= t '.difficulty'%>: <%= recipe.difficulty.name %></p>
       <hr>
     </div>
   <% end %>

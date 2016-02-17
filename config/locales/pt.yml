@@ -1,23 +1,81 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 pt:
-  index_title: "Bem vindo à Social Recipes"
+  defaults:
+    preference: 'Preference'
+    course: 'Course'
+    cuisine: 'Cuisine'
+    difficulty: 'Difficulty'
+  courses:
+    new:
+      title: 'Novo Tipo'
+  cuisines:
+    new:
+      title: 'Nova Cozinha'
+  preferences:
+    new:
+      title: 'Nova Preferência'
+  recipes:
+    index:
+      title: 'Bem-vindo à Social Recipes'
+      admin_title: "Bem-vindo, Mestre %{admin}"
+      user_title: "Welcome to Social Recipes, %{user}"
+      new_course: 'Novo Tipo'
+      new_cuisine: 'Nova Cozinha'
+      new_preference: 'Nova Preferência'
+      preference: 'Preferência'
+      course: 'Tipo'
+      cuisine: 'Cozinha'
+      difficulty: 'Dificuldade'
+      user_title: "Bem-vindo à Social Recipes, %{user}"
+      recipes: 'Receitas'
+      preferences: 'Preferências'
+      cuisines: 'Cozinhas'
+      courses: 'Tipos'
+      favorites: 'As Mais Favoritadas'
+    show:
+      author: "Autor: %{author}"
+      edit: 'Editar'
+      destroy: 'Remover'
+      confirm: 'Tem certeza?'
+      preference: 'Preferência'
+      course: 'Tipo'
+      cuisine: 'Cozinha'
+      difficulty: 'Dificuldade'
+      serves: 'Serve'
+      cooking_time: 'Tempo de cocção'
+      ingredients: 'Ingredientes'
+      directions: 'Instruções'
+      favorite: 'Favoritar'
+      unfavorite: 'Favoritado (Clique para desfazer)'
+    new:
+      title: 'Nova Receita'
+    edit:
+      title: 'Editar Receita'
+  devise:
+    registrations:
+      new:
+        title: 'Cadastre-se'
+      edit:
+        title: 'Editar %{resource}'
+    sessions:
+      new:
+        title: 'Entre'
+  layouts:
+    application:
+      home: 'Início'
+      my_profile: 'Meu Perfil'
+      new_recipe: 'Nova Receita'
+      sign_out: 'Sair'
+      sign_in: 'Entrar'
+      sign_up: 'Cadastre-se'
+  users:
+    show:
+      title: 'Perfil de %{user}'
+      user_title: 'Seu Perfil'
+      name: 'Nome'
+      city: 'Cidade'
+      facebook: 'Facebook'
+      twitter: 'Twitter'
+      email: 'Email'
+      preferences: 'Preferências de Cozinha'
+      recipes: 'Minhas Receitas'
+      favorites: 'Receitas favoritas'
