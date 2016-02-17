@@ -1,16 +1,17 @@
 <% if current_user.try(:admin?) %>
-  <h1>Welcome, Master <%= current_user.first_name %></h1>
+  <h1><%=t '.admin_title', admin: current_user.first_name %></h1>
   <%= link_to "New Cuisine", new_cuisine_path %>
   <%= link_to "New Preference", new_preference_path %>
   <%= link_to "New Course", new_course_path %>
 <% elsif current_user %>
-  <h1>Welcome to Social Recipes, <%= current_user.first_name %></h1>
+  <h1><%=t '.user_title', user: current_user.first_name %></h1>
 <% else %>
-  <h1><%= t :index_title %></h1>
+  <h1><%= t '.title' %></h1>
 <% end %>
 <hr>
 
 <section id="recipes">
+  <h2><%= t '.recipes'%></h2>
   <% @recipes.each do |recipe| %>
     <div class="recipes">
       <h3><%= link_to recipe.name, recipe %></h3>
@@ -25,7 +26,7 @@
 </section>
 
 <aside>
-  <h4>Preferences: </h4>
+  <h4><%= t '.preferences'%></h4>
   <% @preferences.each do |preference| %>
     <%= link_to preference.name, preference %><br>
   <% end %>
@@ -36,7 +37,7 @@
 </aside>
 
 <aside>
-  <h4>Courses: </h4>
+  <h4><%= t '.courses'%></h4>
   <% @courses.each do |course| %>
     <%= link_to course.name, course %><br>
   <% end %>
@@ -44,7 +45,7 @@
 <hr>
 
 <section class = "most_visited">
-  <h3>Most favorited: </h3>
+  <h3><%= t '.favorites'%></h3>
   <% most_favorited = {} %>
   <% @all_recipes.each do |r| %>
     <% most_favorited[r.id] = r.favorites.size %>
