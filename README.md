@@ -53,3 +53,7 @@ Link para o Heroku: https://carlosep-social-recipes.herokuapp.com/
 * Usuário acessa via dispositivo móvel
   * sem branch...
   * nem tentei ainda.. .
+* Internacionaliação
+  * branch i18n
+* Rubocop normalization
+  * branch rubocop
