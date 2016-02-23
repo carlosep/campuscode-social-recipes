@@ -6,6 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<body>
 <% home = t '.home'; my_profile = t '.my_profile'; new_recipe = t '.new_recipe'%>
 <% sign_out = t '.sign_out'; sign_in = t '.sign_in'; sign_up = t '.sign_up'%>
 
@@ -18,9 +19,14 @@
     <%= link_to sign_in, new_user_session_path %>
     <%= link_to sign_up, new_user_registration_path %>
   <% end %>
+  <br>
+  <% if I18n.locale != I18n.default_locale %>
+    <%= link_to "I'd rather see this website in English", locale: 'en'%>
+  <% else %>
+    <%= link_to 'Prefiro ver o site em Português', locale: 'pt'%>
+  <% end %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 <%= yield %>
-
 </body>
 </html>
