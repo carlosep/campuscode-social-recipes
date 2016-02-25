@@ -11,6 +11,6 @@ feature 'Admin signs in' do
     fill_in  'Password', with: admin.password
     click_on 'Log in'
 
-    expect(page).to have_content('Welcome, Master Bruce')
+    expect(page).to have_content("Welcome, Master #{admin.first_name}")
   end
 end

@@ -10,7 +10,7 @@ feature 'User chooses favorite recipes' do
 
     click_on 'Favorite'
 
-    expect(page).to have_content'Favorited'
+    expect(page).to have_content 'Favorited'
   end
 
   scenario 'And sees favorite recipes on user area' do

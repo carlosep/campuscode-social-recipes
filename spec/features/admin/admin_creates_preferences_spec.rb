@@ -20,6 +20,6 @@ feature 'Admin creates a new preference' do
 
     click_on 'Create Preference'
 
-    expect(page).to have_content "Name can\'t be blank"
+    expect(page).to have_content "Name can't be blank"
   end
 end

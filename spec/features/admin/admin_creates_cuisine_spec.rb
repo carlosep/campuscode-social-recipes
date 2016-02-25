@@ -20,6 +20,6 @@ feature 'Admin creates a new cuisine' do
 
     click_on 'Create Cuisine'
 
-    expect(page).to have_content "Name can\'t be blank"
+    expect(page).to have_content "Name can't be blank"
   end
 end

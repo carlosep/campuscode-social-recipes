@@ -11,7 +11,7 @@ feature 'Visitor visits a recipe' do
     end
 
     expect(page).to have_content(recipe.name)
-    # expect(page).to have_content(user.name)
+    expect(page).to have_content(recipe.user.first_name)
     expect(page).to have_content(recipe.preference.name)
     expect(page).to have_content(recipe.course.name)
     expect(page).to have_content(recipe.cuisine.name)
@@ -20,7 +20,6 @@ feature 'Visitor visits a recipe' do
     expect(page).to have_content(recipe.difficulty.name)
     expect(page).to have_content(recipe.ingredient)
     expect(page).to have_content(recipe.directions)
-    # expect(page).to have_content(recipe.favorite)
     # expect(page).to have_content(recipe.email)
     # expect(page).to have_content(photo) #???
   end

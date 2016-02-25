@@ -22,7 +22,7 @@ feature 'User is redirected' do
     expect(page).to have_content 'Access Denied'
   end
 
-  scenario 'when trying to edit other people\'s recipes' do
+  scenario "when trying to edit other people's recipes" do
     other_user = create(:user)
     recipe = create(:recipe, user: other_user)
     user_sign_in(redirect: true)
