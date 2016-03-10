@@ -1,38 +1,48 @@
-<% if @user == current_user %>
-<h1><%= t '.user_title' %></h1>
-<% else %>
-<h1><%= t '.title', user: @user.first_name %></h1>
-<% end %>
-<p><%= t '.name'%>: <%= @user.first_name %> <%= @user.last_name %></p>
-<p><%= t '.city'%>: <%= @user.city %> </p>
-<p><%= t '.facebook'%>: <%= @user.facebook %></p>
-<p><%= t '.twitter'%>: <%= @user.twitter %></p>
-<p><%= t '.email'%>: <%= @user.email %></p>
-<% edit = t '.name'%>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 profile">
+    <h1>Welcome, <%= "#{current_user.first_name} #{current_user.last_name}"%></h1>
+    <div class="col-md-6">
+      <% if @user == current_user %>
+      <h2><%= t '.user_title' %></h2>
+      <% else %>
+      <h1><%= t '.title', user: @user.first_name %></h1>
+      <% end %>
+      <p><%= t '.name'%>: <%= @user.first_name %> <%= @user.last_name %></p>
+      <p><%= t '.city'%>: <%= @user.city %> </p>
+      <p><%= t '.facebook'%>: <%= @user.facebook %></p>
+      <p><%= t '.twitter'%>: <%= @user.twitter %></p>
+      <p><%= t '.email'%>: <%= @user.email %></p>
+      <% edit = t '.edit_profile'%>
 
-<%= link_to edit, edit_user_registration_path if @user == current_user %>
-
-<% unless @user.cuisines.blank? %>
-<p><%= t '.preferences'%>:</p>
-<ul>
-  <%@user.cuisines.split(',').each do |cuisine| %>
-    <li><%= cuisine %></li>
-  <% end %>
-</ul>
-<% end %>
-
-<h3><%= t '.recipes'%></h3>
-<div class="recipes" >
-  <%= render @user.recipes %>
+      <%= link_to edit, edit_user_registration_path if @user == current_user %>
+    </div>
+    <div class="col-md-6">
+      <% unless @user.cuisines.blank? %>
+      <h2><%= t '.preferences'%>:</h2>
+      <ul>
+        <%@user.cuisines.split(',').each do |cuisine| %>
+          <li><%= cuisine %></li>
+        <% end %>
+      </ul>
+      <% end %>
+    </div>
+  </div>
 </div>
-<h3><%= t '.favorites'%>:</h3>
-<div class="favorites" >
-  <% for n in 0...@user.favorites.size do %>
-  <% fav_recipe = Recipe.find(@user.favorites[n-1].recipe_id) %>
-    <h3><%= link_to fav_recipe.name, fav_recipe %></h3>
-    <p><%= fav_recipe.preference.name %></p>
-    <p><%= fav_recipe.course.name %></p>
-    <p><%= fav_recipe.cuisine.name %></p>
-    <p><%= fav_recipe.difficulty.name %></p>
-  <% end %>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3><%= t '.recipes'%></h3>
+    <%= render @user.recipes %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+  <h3><%= t '.favorites'%>:</h3>
+    <div class="favorites" >
+      <% for n in 0...@user.favorites.size do %>
+        <%= render recipe = Recipe.find(@user.favorites[n-1].recipe_id) %>
+      <% end %>
+    </div>
+  </div>
 </div>
