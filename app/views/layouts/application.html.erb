@@ -7,17 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container-fluid body-content" >
+  <div class="container" >
     <div class="row">
-      <div class="col-lg-10 col-lg-offset-1" id="main-container">
+      <div class="col-lg-12" id="main-container">
         <%= render 'layouts/navigation' %>
-        <div class="row">
+        <div class="row img-space">
           <div class="col-lg-8 col-lg-offset-2">
             <img src="https://lh3.ggpht.com/KCx-whtHiJy7ghHWQsS_Cf_L-nmTCIZx3YKZsWymz59kJo5D94SkVpF0euFD9-_4DJ0e=w300" alt="Logo" class="img-responsive center-block"  />
           </div>
         </div>
-        <div class="col-lg-12" id="main-menu">
-          <%= render 'layouts/menus' %>
+        <div class="row">
+          <div class="col-lg-12" id="main-menu">
+            <%= render 'layouts/menus' %>
+          </div>
         </div>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>

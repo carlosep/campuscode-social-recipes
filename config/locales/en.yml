@@ -20,7 +20,7 @@ en:
       course: 'Course'
       cuisine: 'Cuisine'
       difficulty: 'Difficulty'
-      recipes: 'Recipes'
+      last_recipes: 'Last recipes added'
       preferences: 'Preferences'
       cuisines: 'Cuisines'
       courses: 'Courses'

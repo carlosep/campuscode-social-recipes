@@ -17,10 +17,20 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+body{
+  background-image:url('/food-grey.png');
+}
+
  #main-container{
    border-left: 1px solid #cc6600;
    border-right: 1px solid #cc6600;
    box-shadow: 0px 0px 15px rgba(000, 000, 000, 0.5);
+   background-image:url('/food.png');
+ }
+
+.img-space{
+   padding: 20px;
+   background-image:url('/food-orange.png');
  }
 
  .navbar-default {
@@ -67,4 +77,7 @@
 .nav-pills > .open > a:hover,
 .nav-pills > .open > a:focus{
   background: #cc6600;
+}
+
+.index-title{
 }
