@@ -1,4 +1,5 @@
 <% home = t '.home'; my_profile = t '.my_profile'; new_recipe = t '.new_recipe'%>
+<% new_preference = t '.new_preference'; new_cuisine = t '.new_cuisine'; new_course = t '.new_course'%>
 <% sign_out = t '.sign_out'; sign_in = t '.sign_in'; sign_up = t '.sign_up'%>
 
 <div class="navbar navbar-default">
@@ -26,6 +27,11 @@
             <ul class="dropdown-menu">
               <li><%= link_to my_profile, user_path(current_user) %></li>
               <li><%= link_to new_recipe, new_recipe_path %></li>
+              <% if current_user.admin? %>
+                <li><%= link_to new_preference, new_preference_path %></li>
+                <li><%= link_to new_cuisine, new_cuisine_path %></li>
+                <li><%= link_to new_course, new_course_path %></li>
+              <% end %>
               <li><%= link_to sign_out, destroy_user_session_path, method: :delete %></li>
             </ul>
           </li>

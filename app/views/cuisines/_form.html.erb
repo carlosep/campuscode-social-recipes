@@ -8,7 +8,9 @@
 <% end %>
 </div>
 <%= form_for @cuisine do |f| %>
+<div class="form-group">
   <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit submit_text %>
+  <%= f.text_field :name,	class:"form-control" %>
+</div>
+  <%= f.submit submit_text, class:"btn	btn-success" %>
 <% end %>
