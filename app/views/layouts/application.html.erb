@@ -7,26 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% home = t '.home'; my_profile = t '.my_profile'; new_recipe = t '.new_recipe'%>
-<% sign_out = t '.sign_out'; sign_in = t '.sign_in'; sign_up = t '.sign_up'%>
-
-<%= link_to home, root_path %>
-  <% if user_signed_in? %>
-    <%= link_to my_profile, user_path(current_user) %>
-    <%= link_to new_recipe, new_recipe_path %>
-    <%= link_to sign_out, destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to sign_in, new_user_session_path %>
-    <%= link_to sign_up, new_user_registration_path %>
-  <% end %>
-  <br>
-  <% if I18n.locale != I18n.default_locale %>
-    <%= link_to "I'd rather see this website in English", locale: 'en'%>
-  <% else %>
-    <%= link_to 'Prefiro ver o site em Português', locale: 'pt'%>
-  <% end %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-<%= yield %>
+  <div class="container-fluid body-content" >
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1" id="main-container">
+        <%= render 'layouts/navigation' %>
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <img src="https://lh3.ggpht.com/KCx-whtHiJy7ghHWQsS_Cf_L-nmTCIZx3YKZsWymz59kJo5D94SkVpF0euFD9-_4DJ0e=w300" alt="Logo" class="img-responsive center-block"  />
+          </div>
+        </div>
+        <div class="col-lg-12" id="main-menu">
+          <%= render 'layouts/menus' %>
+        </div>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </div>
+    </div>
 </body>
 </html>

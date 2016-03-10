@@ -1,0 +1,56 @@
+<div class="col-lg-2 text-right menu-h4">
+  <h4><%= t '.cuisines'%>:</h4>
+</div>
+<div class="col-lg-10">
+  <ul class="nav nav-pills nav-justified">
+    <% $cuisines.each do |cuisine| %>
+      <li role="presentation"><%= link_to cuisine.name, cuisine %></li>
+    <% end %>
+      <li role="presentation" class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        More <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li role="presentation"><a href="#">Home</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="col-lg-2 text-right menu-h4">
+<h4><%= t '.preferences'%>:</h4>
+</div>
+<div class="col-lg-10">
+<ul class="nav nav-pills nav-justified">
+  <% $preferences.each do |preference| %>
+    <li role="presentation"><%= link_to preference.name, preference %></li>
+  <% end %>
+    <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      More <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li role="presentation"><a href="#">Home</a></li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<div class="col-lg-2 text-right menu-h4">
+<h4><%= t '.courses'%>:</h4>
+</div>
+<div class="col-lg-10">
+<ul class="nav nav-pills nav-justified">
+  <% $courses.each do |course| %>
+    <li role="presentation"><%= link_to course.name, course %></li>
+  <% end %>
+    <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      More <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li role="presentation"><a href="#">Home</a></li>
+    </ul>
+  </li>
+</ul>
+</div>

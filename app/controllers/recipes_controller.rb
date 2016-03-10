@@ -9,11 +9,11 @@ class RecipesController < ApplicationController
   respond_to :html, :json
 
   def index
-    @recipes = Recipe.last(20).reverse
-    @all_recipes = Recipe.all
-    @courses = Course.all
-    @cuisines = Cuisine.all
-    @preferences = Preference.all
+    $recipes = Recipe.last(20).reverse
+    $all_recipes = Recipe.all
+    $courses = Course.all
+    $cuisines = Cuisine.all
+    $preferences = Preference.all
   end
 
   def new
