@@ -31,6 +31,7 @@ body{
 .img-space{
    padding: 20px;
    background-image:url('/food-orange.png');
+   border-top: 2px solid darken(orange, 10%);
  }
 
  .navbar-default {
@@ -79,5 +80,24 @@ body{
   background: #cc6600;
 }
 
+.recipes{
+  background-color: rgba(255, 255, 255, 0.8);;
+  margin: 10px auto;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+}
+
 .index-title{
+  margin-top: -62px;
+  margin-bottom: 20px;
+  background-color: orange;
+  border-radius: 10px;
+  border: 1px solid #cc6600;
+  color:#cc6600;
+}
+
+#carousel-example-generic{
+  background-color: rgba(255, 149, 204, 0.3);;
 }

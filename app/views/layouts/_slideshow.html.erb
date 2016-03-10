@@ -1,0 +1,66 @@
+<div id="carousel-example-generic" class="carousel slide">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <!-- Slide -->
+    <div class="item active">
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <img src="http://www.w3schools.com/bootstrap/img_chania.jpg" alt=""/>
+        </div>
+        <div class="col-xs-12 col-md-6 text">
+          <h1>Welcome to Social recipes</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <p> <strong>How to do it:</strong> </p>
+          <ul>
+            <li>do this</li>
+            <li>do that</li>
+            <li>do this</li>
+          </ul>
+          <a href="#">See more...</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide -->
+    <% $most_favorited.each do |key, value| %>
+      <%r = Recipe.find(key)%>
+      <div class="item">
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <%= image_tag r.image.url(:medium)%>
+          </div>
+          <div class="col-xs-12 col-md-6 text">
+            <h1><%= link_to r.name, r %></h1>
+            <p>Favorited: <%= pluralize(value, 'time') %></p>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+            <p> <strong>How to do it:</strong> </p>
+            <ul>
+              <li>do this</li>
+              <li>do that</li>
+              <li>do this</li>
+            </ul>
+            <%= link_to 'See More...', r %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="icon-next"></span>
+  </a>
+
+  </div>
