@@ -1,20 +1,29 @@
-<h1><%= @recipe.name %></h1>
+<div class="page-header">
+  <h1><%= @recipe.name %></h1>
+</div>
 
-<%= image_tag @recipe.image.url(:medium)%>
-<h3><em><%= t '.author', author: @recipe.user.first_name %></em></h3>
-<% if current_user == @recipe.user %>
-  <% edit = t '.edit'; destroy = t '.destroy'; confirm = t '.confirm'%>
-  <%= link_to edit, edit_recipe_path(@recipe) %>
-  <%= link_to destroy, recipe_path(@recipe), method: :delete,
-      data: {confirm: confirm} %>
-<% end %>
+<div class="row">
+  <div	class="col-md-6">
+    <%= image_tag @recipe.image.url(:medium)%>
+    <h3><em><%= t '.author', author: @recipe.user.first_name %></em></h3>
+    <% if current_user == @recipe.user %>
+      <% edit = t '.edit'; destroy = t '.destroy'; confirm = t '.confirm'%>
+      <%= link_to edit, edit_recipe_path(@recipe) %>
+      <%= link_to destroy, recipe_path(@recipe), method: :delete,
+          data: {confirm: confirm} %>
+    <% end %>
+  </div>
+  <div	class="col-md-6">
+    <p><strong><%= t '.preference'%>:</strong> <%= @recipe.preference.name %></p>
+    <p><strong><%= t '.course'%>:</strong> <%= @recipe.course.name %></p>
+    <p><strong><%= t '.cuisine'%>:</strong> <%= @recipe.cuisine.name%></p>
+    <p><strong><%= t '.serves'%>:</strong> <%= pluralize(@recipe.portion, 'person') %></p>
+    <p><strong><%= t '.cooking_time'%>:</strong> <%= @recipe.cooking_time %></p>
+    <p><strong><%= t '.difficulty'%>:</strong> <%= @recipe.difficulty.name %></p>
+  </div>
+</div>
+
 <hr>
-<p><strong><%= t '.preference'%>:</strong> <%= @recipe.preference.name %></p>
-<p><strong><%= t '.course'%>:</strong> <%= @recipe.course.name %></p>
-<p><strong><%= t '.cuisine'%>:</strong> <%= @recipe.cuisine.name%></p>
-<p><strong><%= t '.serves'%>:</strong> <%= pluralize(@recipe.portion, 'person') %></p>
-<p><strong><%= t '.cooking_time'%>:</strong> <%= @recipe.cooking_time %></p>
-<p><strong><%= t '.difficulty'%>:</strong> <%= @recipe.difficulty.name %></p>
 <h3><%= t '.ingredients'%></h3>
 <p> <%= @recipe.ingredient %></p>
 <h3><%= t '.directions'%>:</h3>

@@ -1,10 +1,10 @@
-<h3><%= link_to recipe.name, recipe %></h3>
-<p><%= recipe.preference.name %></p>
-<p><%= recipe.course.name %></p>
-<p><%= recipe.cuisine.name %></p>
-<p><%= recipe.difficulty.name %></p>
-<% if current_user == @user %>
-  <%= link_to 'Edit', edit_recipe_path(recipe) %>
-  <%= link_to 'Destroy', recipe_path(recipe), method: :delete,
-      data: {confirm: 'Are you sure?'} %>
-<% end %>
+<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0 col-lg-4 text-center">
+  <div class="recipes">
+    <h3><%= link_to recipe.name, recipe %></h3>
+    <%= image_tag recipe.image.url(:thumb)%>
+    <p><%= t '.preference'%>: <%= recipe.preference.name %></p>
+    <p><%= t '.course'%>: <%= recipe.course.name %></p>
+    <p><%= t '.cuisine'%>: <%= recipe.cuisine.name %></p>
+    <p><%= t '.difficulty'%>: <%= recipe.difficulty.name %></p>
+  </div>
+</div>
