@@ -8,16 +8,16 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   version :standard do
     eager
-    process :resize_to_fill => [460, 345, :north]
+    resize_to_fill(460, 345)
   end
 
   version :thumbnail do
     eager
-    resize_to_fit(150, 110)
+    resize_to_fill(150, 110)
   end
 
   def public_id
-      return "campuscode-socialrecipes/#{model.name}"
+      return "campuscode-socialrecipes/recipes/#{model.name}"
     end
 
 

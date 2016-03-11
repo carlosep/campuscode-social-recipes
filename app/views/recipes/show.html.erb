@@ -4,7 +4,7 @@
 
 <div class="row">
   <div	class="col-md-6">
-    <%= image_tag(@recipe.image_url)%>
+    <%= image_tag(@recipe.image_url(:standard))%>
     <h3><em><%= t '.author', author: @recipe.user.first_name %></em></h3>
     <% if current_user == @recipe.user || current_user.try(:admin?) %>
       <% edit = t '.edit'; destroy = t '.destroy'; confirm = t '.confirm'%>

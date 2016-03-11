@@ -17,6 +17,7 @@ gem "devise"
 gem 'netrc', '~> 0.11.0'
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'file_validators'
 
 # gems required by Heroku
 gem 'pg', group: :production

@@ -10,4 +10,5 @@ class Recipe < ActiveRecord::Base
   validates :name, :cuisine_id, :course_id, :preference_id, :difficulty_id,
             :portion, :ingredient, :directions, :cooking_time, :user_id,
             presence: true
+  validates :image, file_size: { less_than: 1.megabyte }
 end
