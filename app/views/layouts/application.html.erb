@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SocialRecipes</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -10,29 +13,32 @@
   <div class="container" >
     <div class="row">
       <div class="col-lg-12" id="main-container">
-        <%= render 'layouts/navigation' %>
-        <% if current_page?(root_url) %>
-        <div class="row img-space">
-          <div class="col-md-8 col-md-offset-2">
-            <img src="/sr-logo.png" alt="Logo" class="img-responsive center-block"  />
-          </div>
-        </div>
-      <% end %>
-        <div class="row">
-          <div class="col-xs-12" id="main-menu">
-            <%= render 'layouts/menus' %>
-          </div>
-        </div>
-        <% if current_page?(root_url) %>
-          <div class="row">
-            <div class="col-xs-12">
-              <%= render 'layouts/slideshow' %>
+        <div class="wrap">
+          <%= render 'layouts/navigation' %>
+          <% if current_page?(root_url) %>
+          <div class="row img-space">
+            <div class="col-md-8 col-md-offset-2" >
+              <img src="/sr-logo.png" alt="Logo" class="img-responsive center-block"  />
             </div>
           </div>
         <% end %>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <%= yield %>
+          <div class="row">
+            <div class="col-xs-12" id="main-menu">
+              <%= render 'layouts/menus' %>
+            </div>
+          </div>
+          <% if current_page?(root_url) %>
+            <div class="row">
+              <div class="col-xs-12">
+                <%= render 'layouts/slideshow' %>
+              </div>
+            </div>
+          <% end %>
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          <%= yield %>
+        </div>
+        <%= render 'layouts/footer' %>
       </div>
     </div>
 </body>
