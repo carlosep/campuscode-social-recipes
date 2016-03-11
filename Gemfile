@@ -14,6 +14,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "paperclip", "~> 4.3"
 
 gem "devise"
+gem 'netrc', '~> 0.11.0'
+gem 'carrierwave'
+gem 'cloudinary'
 
 # gems required by Heroku
 gem 'pg', group: :production
