@@ -14,11 +14,6 @@
     <div	class="collapse	navbar-collapse"	id="collapibleMenu">
       <ul	class="nav	navbar-nav	navbar-left">
         <li><%= link_to home, root_path %></li>
-        <% if I18n.locale != I18n.default_locale %>
-          <li><%= link_to "I'd rather see this website in English", locale: 'en'%></li>
-        <% else %>
-          <li><%= link_to 'Prefiro ver o site em Português', locale: 'pt'%></li>
-        <% end %>
 			</ul>
       <ul	class="nav	navbar-nav	navbar-right">
         <% if user_signed_in? %>
