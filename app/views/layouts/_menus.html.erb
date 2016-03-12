@@ -3,7 +3,7 @@
 </div>
 <div class="col-lg-10">
   <ul class="nav nav-pills nav-justified">
-    <% $cuisines.first(7).each do |cuisine| %>
+    <% @cuisines.first(7).each do |cuisine| %>
       <li role="presentation"><%= link_to cuisine.name, cuisine %></li>
     <% end %>
       <li role="presentation" class="dropdown">
@@ -11,7 +11,7 @@
         More <span class="caret"></span>
       </a>
       <ul class="dropdown-menu">
-        <% $cuisines.drop(7).each do |cuisine| %>
+        <% @cuisines.drop(7).each do |cuisine| %>
           <li role="presentation"><%= link_to cuisine.name, cuisine %></li>
         <% end %>
       </ul>
@@ -24,7 +24,7 @@
 </div>
 <div class="col-lg-10">
 <ul class="nav nav-pills nav-justified">
-  <% $preferences.first(7).each do |preference| %>
+  <% @preferences.first(7).each do |preference| %>
     <li role="presentation"><%= link_to preference.name, preference %></li>
   <% end %>
     <li role="presentation" class="dropdown">
@@ -32,7 +32,7 @@
       More <span class="caret"></span>
     </a>
     <ul class="dropdown-menu">
-      <% $preferences.drop(7).each do |preference| %>
+      <% @preferences.drop(7).each do |preference| %>
         <li role="presentation"><%= link_to preference.name, preference %></li>
       <% end %>
     </ul>
@@ -45,7 +45,7 @@
 </div>
 <div class="col-lg-10">
 <ul class="nav nav-pills nav-justified">
-  <% $courses.first(7).each do |course| %>
+  <% @courses.first(7).each do |course| %>
     <li role="presentation"><%= link_to course.name, course %></li>
   <% end %>
     <li role="presentation" class="dropdown">
@@ -53,7 +53,7 @@
       More <span class="caret"></span>
     </a>
     <ul class="dropdown-menu">
-      <% $courses.drop(7).each do |course| %>
+      <% @courses.drop(7).each do |course| %>
         <li role="presentation"><%= link_to course.name, course %></li>
       <% end %>
     </ul>

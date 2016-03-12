@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Visitor visits social recipes homepage' do
   scenario 'successfully' do
     visit root_path
-    expect(page).to have_content('Welcome to Social Recipes')
+    expect(page).to have_current_path(root_path)
   end
   scenario 'and sees recipes on index' do
     recipe = create(:recipe)

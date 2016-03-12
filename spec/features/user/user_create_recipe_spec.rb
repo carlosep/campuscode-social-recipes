@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'User creates a new recipe' do
   scenario 'successfully' do
-    recipe = build(:recipe)
+    recipe = build(:recipe, name: 'Recipe name')
 
     visit new_recipe_path
     user_sign_in
@@ -29,7 +29,9 @@ feature 'User creates a new recipe' do
     expect(page).to have_content recipe.cooking_time
     expect(page).to have_content recipe.ingredient
     expect(page).to have_content recipe.directions
-    expect(page).to have_css("img[src*='sample.jpg']")
+    # rubocop:disable Metrics/LineLength
+    expect(page).to have_css "img[src*='/campuscode-socialrecipes/recipes/Recipe%20name.png']"
+    # rubocop:enable Metrics/LineLength
   end
 
   scenario 'invalid' do

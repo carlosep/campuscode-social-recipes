@@ -32,7 +32,7 @@
     </div>
 
     <!-- Slide -->
-    <% $most_favorited.each do |key, value| %>
+    <% @most_favorited.each do |key, value| %>
       <%r = Recipe.find(key)%>
       <div class="item">
         <div class="row">

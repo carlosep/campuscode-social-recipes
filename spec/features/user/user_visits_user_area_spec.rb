@@ -27,27 +27,19 @@ feature 'User visits user area' do
     user_sign_in(user: user, redirect: true)
     visit user_path(id: user)
 
-    expect(page).to have_content('My Recipes')
-    expect(page).to have_content(recipe.name)
-    expect(page).to have_content(recipe.cuisine.name)
-    expect(page).to have_content(recipe.course.name)
-    expect(page).to have_content(recipe.preference.name)
-    expect(page).to have_content(recipe.difficulty.name)
-    expect(page).to have_content(recipe_2.name)
-    expect(page).to have_content(recipe_2.cuisine.name)
-    expect(page).to have_content(recipe_2.course.name)
-    expect(page).to have_content(recipe_2.preference.name)
-    expect(page).to have_content(recipe_2.difficulty.name)
-
-    within('.recipes') do
-      expect(page).to have_content('Edit')
-      expect(page).to have_content('Destroy')
+    within('.my-recipes') do
+      expect(page).to have_content('My Recipes')
+      expect(page).to have_content(recipe.name)
+      expect(page).to have_content(recipe.cuisine.name)
+      expect(page).to have_content(recipe.course.name)
+      expect(page).to have_content(recipe.preference.name)
+      expect(page).to have_content(recipe.difficulty.name)
+      expect(page).to have_content(recipe_2.name)
+      expect(page).to have_content(recipe_2.cuisine.name)
+      expect(page).to have_content(recipe_2.course.name)
+      expect(page).to have_content(recipe_2.preference.name)
+      expect(page).to have_content(recipe_2.difficulty.name)
     end
-
     expect(page).not_to have_content(recipe_3.name)
-    expect(page).not_to have_content(recipe_3.cuisine.name)
-    expect(page).not_to have_content(recipe_3.course.name)
-    expect(page).not_to have_content(recipe_3.preference.name)
-    expect(page).not_to have_content(recipe_3.difficulty.name)
   end
 end
