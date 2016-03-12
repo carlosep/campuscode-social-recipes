@@ -3,8 +3,8 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 
-  process :convert => 'png'
-  process :tags => ['campuscode-socialrecipes']
+  process convert: 'png'
+  process tags: ['campuscode-socialrecipes']
 
   version :standard do
     eager
@@ -17,8 +17,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def public_id
-      return "campuscode-socialrecipes/recipes/#{model.name}"
-    end
-
-
+    "campuscode-socialrecipes/recipes/#{model.name}"
+  end
 end

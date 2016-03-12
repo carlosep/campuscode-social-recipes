@@ -16,4 +16,20 @@ class ApplicationController < ActionController::Base
   def default_url_options(options = {})
     { locale: I18n.locale }.merge options
   end
+
+  def set_vars
+    @recipes = Recipe.last(20).reverse
+    @courses = Course.all
+    @cuisines = Cuisine.all
+    @preferences = Preference.all
+    @most_favorited = Hash[most_favorites.sort_by { |_k, v| v }
+                      .reverse.first 3]
+  end
+
+  def most_favorites
+    temp = {}
+    Recipe.all.each do |r|
+      temp[r.id] = r.favorites.size
+    end
+  end
 end

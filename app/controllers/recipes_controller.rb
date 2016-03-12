@@ -9,15 +9,6 @@ class RecipesController < ApplicationController
   respond_to :html, :json
 
   def index
-    $recipes = Recipe.last(20).reverse
-    $courses = Course.all
-    $cuisines = Cuisine.all
-    $preferences = Preference.all
-    temp = {}
-    Recipe.all.each do |r|
-      temp[r.id] = r.favorites.size
-    end
-    $most_favorited = Hash[temp.sort_by{|k, v| v}.reverse.first 3]
   end
 
   def new
