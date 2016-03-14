@@ -26,7 +26,7 @@ en:
       courses: 'Courses'
       favorites: 'Most Favorited'
     show:
-      author: "Author: %{author}"
+      author: "Author:"
       edit: 'Edit'
       destroy: 'Destroy'
       confirm: 'Are you sure?'
