@@ -1,59 +1,21 @@
 # Social Recipes
-***A friendly recipe website for all family...***  
-Não tão amigável porque nenhum estilo foi implementado.
+#### https://carlosep-social-recipes.herokuapp.com/
+***A friendly recipes website for all family...***
+Social Recipes was the third project on Campus Code bootcamp aiming to put on test our skills to develop software by ourselves and to face the challenges provided by that.   
+This project was developed during one week of remote work, and every student developed their own version, implementing mandatory features and also some extra ones as they see fit.   
+In my version I used bootstrap to make it responsive, added a carousel on the homepage with the most favorited recipes, allowed authentication, so users have a profile page, post their recipes and favorite other user's recipes. Recipes are categorized by cuisine, preference or type of meal.   
+This project is always active. As I learn new things, I implement them.
 
-Link para o Heroku: https://carlosep-social-recipes.herokuapp.com/
+## Features
+* **Visitor can view individual recipes or an index with several of them.**
+* **Authenticated users can post and edit their recipes.**
+* **Only admins can create or edit courses of meal, preferences and cuisines.**
+* **Users can favorite recipes**
+* **Users can visit other user's profiles**
+* **Bootstrap added for responsiveness**
 
-## Status das Estórias:
-
-* Usuário cadastra receitas
-  * branch user_creates_recipe
-  * branch image_upload - branch com upload de imagens.
-  * concluído
-* Usuário visualiza receitas
-  * branch user_views_recipes
-  * concluído
-* Administrador cadastra cozinhas
-  * branch admin_creates_cuisines
-  * concluído
-* Administrador cadastra tipos de comida
-  * branch admin_creates_course
-  * concluído
-* Administrador cadastra preferências de comida
-  * branch admin_creates_preferences
-  * concluído
-* Usuário vê últimas receitas na home
-  * branch user_sees_last_recipes
-  * concluído
-* Organizar receitas por tipo, preferência ou cozinha
-  * branch recipes_organized
-  * concluído
-* Usuário mantém suas receitas
-  * branch user_keeps_recipes
-  * concluído
-* Usuário escolhe receitas favoritas
-  * branch choose_favorites
-  * concluído, com bastante criatividade. mas concluído.
-* Usuário vê receitas mais favoritadas na home
-  * branch most_favorited_recipes
-  * concluído
-* Usuário se autentica no site
-  * branch devise_install
-  * concluído
-* Usuário visualiza perfis de outros usuários
-  * sem branch...
-  * concluído
-* Usuário mantem seus dados de perfil
-  * branch user_keeps_profile_data, sem preferências de cozinha
-  * branch user_keeps_profile_data_v2,  preferências de cozinha adicionados aqui
-  * concluído
-* Usuário envia receita para amigo
-  * branch user_sends_email
-  * FAIL!
-* Usuário acessa via dispositivo móvel
-  * sem branch...
-  * nem tentei ainda.. .
-* Internacionaliação
-  * branch i18n
-* Rubocop normalization
-  * branch rubocop
+## Future developments
+* **Users will be able to follow other users.**
+* **Users will be able to interact with this other user by sending messages, suggesting recipes, etc. **
+* **Users will be able to send recipes through email.**
+* **Users will be able to search for recipes by typing.**
