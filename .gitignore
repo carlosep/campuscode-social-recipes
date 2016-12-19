@@ -18,3 +18,5 @@
 
 /public/system/recipes/images/*
 /public/uploads/tmp/*
+
+coverage
