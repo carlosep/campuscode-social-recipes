@@ -18,15 +18,15 @@ feature 'Visitor visits social recipes homepage' do
   end
 
   scenario 'and sees last 20 recipes on index' do
-    FactoryGirl.reload unless FactoryGirl.factories.blank?
+    FactoryBot.reload unless FactoryBot.factories.blank?
     25.times { create(:recipe) }
 
     visit root_path
     (6..25).each do |i|
-      expect(page).to have_content("Name of meal ##{i} P") # Gambiarra??
+      expect(page).to have_content("Name of meal ##{i}\n")
     end
     (1..5).each do |i|
-      expect(page).not_to have_content("Name of meal ##{i} P") # Gambiarra??
+      expect(page).not_to have_content("Name of meal ##{i}\n")
     end
   end
 end

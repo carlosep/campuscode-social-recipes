@@ -18,7 +18,7 @@ gem 'netrc', '~> 0.11.0'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'file_validators'
-gem 'factory_girl_rails'
+gem 'factory_bot_rails'
 
 
 # gems required by Heroku
@@ -30,9 +30,10 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'rspec-rails'
+  gem 'rubocop-rspec'
   gem 'simplecov', require: false
   gem 'capybara'
-  gem 'rubocop', '~> 0.37.2', require: false
+  gem 'rubocop', require: false
 end
 
 group :development do
